@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On White Clinic — Blanqueamiento Dental en Madrid</title>
+  <meta name="description" content="La única clínica en España especializada en blanqueamiento dental. Resultados profesionales desde 199 EUR. Reserva tu cita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Booking Bar (mobile) -->
+  <div class="booking-bar" id="bookingBar">
+    <span class="booking-bar__text">¿Lista para tu sonrisa?</span>
+    <a href="#reservar" class="booking-bar__cta">Reservar cita</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <span class="logo-on">On</span><span class="logo-white">White</span>
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="#tratamientos" class="nav-link">Tratamientos</a>
+        <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+        <a href="#resultados" class="nav-link">Resultados</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header__actions">
+        <a href="tel:+34603913091" class="header__phone">603 913 091</a>
+        <a href="#reservar" class="btn btn--gold btn--sm">Reservar cita</a>
+      </div>
+      <button class="header__burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      <a href="#tratamientos" class="mobile-menu__link">Tratamientos</a>
+      <a href="#como-funciona" class="mobile-menu__link">Cómo funciona</a>
+      <a href="#resultados" class="mobile-menu__link">Resultados</a>
+      <a href="#nosotros" class="mobile-menu__link">Nosotros</a>
+      <a href="#faq" class="mobile-menu__link">FAQ</a>
+      <a href="#reservar" class="btn btn--gold btn--lg mobile-menu__cta">Reservar cita</a>
+      <a href="tel:+34603913091" class="mobile-menu__phone">603 913 091</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__texture"></div>
+      <div class="hero__content">
+        <div class="hero__left">
+          <p class="hero__pre reveal-up">La única clínica en España especializada en blanqueamiento dental</p>
+          <h1 class="hero__title reveal-up" style="animation-delay:.1s">
+            Tu sonrisa,<br>
+            <span class="hero__title-accent">varios tonos</span><br>
+            más blanca.
+          </h1>
+          <p class="hero__sub reveal-up" style="animation-delay:.2s">Tratamientos profesionales desde 199&nbsp;EUR. Resultados inmediatos, duraderos y 100% seguros.</p>
+          <div class="hero__ctas reveal-up" style="animation-delay:.3s">
+            <a href="#reservar" class="btn btn--gold btn--lg">Reservar mi cita</a>
+            <a href="#tratamientos" class="btn btn--outline btn--lg">Ver tratamientos</a>
+          </div>
+        </div>
+        <div class="hero__right reveal-up" style="animation-delay:.25s">
+          <div class="hero__image-wrapper">
+            <div class="hero__image-placeholder">
+              <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="500" rx="24" fill="#F0EBE3"/>
+                <circle cx="200" cy="200" r="80" fill="#E8D5C8"/>
+                <path d="M160 220 Q200 280 240 220" stroke="#C4A265" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <rect x="140" y="350" width="120" height="8" rx="4" fill="#C4A265" opacity="0.4"/>
+                <rect x="160" y="370" width="80" height="6" rx="3" fill="#C4A265" opacity="0.25"/>
+              </svg>
+              <span class="hero__image-label">Foto paciente sonriendo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__trust reveal-up" style="animation-delay:.4s">
+        <div class="trust-item">
+          <span class="trust-item__number">+2.000</span>
+          <span class="trust-item__label">sonrisas</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-item__number">5/5</span>
+          <span class="trust-item__label">en Google</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-item__number">desde 51&nbsp;€</span>
+          <span class="trust-item__label">al mes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why On White -->
+    <section class="section section--cream" id="nosotros">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <p class="section-tag reveal-up">Por qué On White</p>
+          <h2 class="section-title reveal-up" style="animation-delay:.08s">No somos una<br>clínica dental más</h2>
+          <p class="section-desc reveal-up" style="animation-delay:.16s">Somos los únicos en España que nos dedicamos exclusivamente al blanqueamiento. Eso significa más experiencia, mejores resultados y precios que no encontrarás en una clínica generalista.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card reveal-up" style="animation-delay:.1s">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5"/><path d="M24 14v20M14 24h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Especialistas de verdad</h3>
+            <p class="feature-card__desc">No hacemos ortodoncia, ni implantes, ni empastes. Solo blanqueamiento. Miles de tratamientos nos avalan.</p>
+          </div>
+          <div class="feature-card reveal-up" style="animation-delay:.18s">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M8 36l8-16 8 10 8-20 8 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Precio justo, resultado premium</h3>
+            <p class="feature-card__desc">De 199 a 299&nbsp;EUR frente a los 350-700&nbsp;EUR de clínicas tradicionales. Misma tecnología, sin el sobreprecio.</p>
+          </div>
+          <div class="feature-card reveal-up" style="animation-delay:.26s">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/><path d="M24 16v8l6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Una visita, una hora</h3>
+            <p class="feature-card__desc">Sin vueltas. Vienes, te blanqueamos, te vas con una sonrisa nueva. Así de sencillo.</p>
+          </div>
+          <div class="feature-card reveal-up" style="animation-delay:.34s">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 48 48" fill="none"><path d="M24 8C18 8 12 14 12 22c0 10 12 18 12 18s12-8 12-18c0-8-6-14-12-14z" stroke="currentColor" stroke-width="1.5"/><path d="M20 22l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feature-card__title">Sin dolor garantizado</h3>
+            <p class="feature-card__desc">Protocolo especial para dientes sensibles. Gel desensibilizante incluido en todos los tratamientos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatments -->
+    <section class="section" id="tratamientos">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag reveal-up">Tratamientos</p>
+          <h2 class="section-title reveal-up" style="animation-delay:.08s">Encuentra tu<br>tratamiento ideal</h2>
+          <p class="section-desc reveal-up" style="animation-delay:.16s">Desde sesiones express hasta el plan más completo. Todos realizados por dentistas colegiados.</p>
+        </div>
+        <div class="treatments-grid">
+
+          <div class="treatment-card reveal-up" style="animation-delay:.08s">
+            <div class="treatment-card__header">
+              <span class="treatment-card__tag">Express</span>
+              <h3 class="treatment-card__name">En Casa</h3>
+              <div class="treatment-card__price">
+                <span class="treatment-card__amount">199 €</span>
+              </div>
+            </div>
+            <ul class="treatment-card__features">
+              <li>1 visita de 30 min</li>
+              <li>20 días de tratamiento en casa</li>
+              <li>Férulas personalizadas</li>
+            </ul>
+            <p class="treatment-card__ideal">Ideal para quien prefiere blanquear a su ritmo</p>
+            <a href="#reservar" class="btn btn--outline btn--full">Reservar</a>
+          </div>
+
+          <div class="treatment-card reveal-up" style="animation-delay:.16s">
+            <div class="treatment-card__header">
+              <span class="treatment-card__tag">Inmediato</span>
+              <h3 class="treatment-card__name">Clínico</h3>
+              <div class="treatment-card__price">
+                <span class="treatment-card__amount">220 €</span>
+              </div>
+            </div>
+            <ul class="treatment-card__features">
+              <li>1 visita de 1 hora</li>
+              <li>Resultados inmediatos</li>
+              <li>Hasta 3 tonos más blanco</li>
+            </ul>
+            <p class="treatment-card__ideal">Ideal para quien quiere resultados ya</p>
+            <a href="#reservar" class="btn btn--outline btn--full">Reservar</a>
+          </div>
+
+          <div class="treatment-card treatment-card--featured reveal-up" style="animation-delay:.24s">
+            <div class="treatment-card__badge">Más popular</div>
+            <div class="treatment-card__header">
+              <span class="treatment-card__tag">Completo</span>
+              <h3 class="treatment-card__name">Combinado</h3>
+              <div class="treatment-card__price">
+                <span class="treatment-card__amount">299 €</span>
+              </div>
+            </div>
+            <ul class="treatment-card__features">
+              <li>1 visita de 1 hora + 20 días en casa</li>
+              <li>Máximo resultado, dura 2-3 años</li>
+              <li>Hasta 8 tonos más blanco</li>
+            </ul>
+            <p class="treatment-card__ideal">Ideal para quien quiere el mejor resultado posible</p>
+            <a href="blanqueamiento-combinado.html" class="btn btn--gold btn--full">Ver tratamiento</a>
+          </div>
+
+          <div class="treatment-card reveal-up" style="animation-delay:.32s">
+            <div class="treatment-card__header">
+              <span class="treatment-card__tag">Suave</span>
+              <h3 class="treatment-card__name">Dientes Sensibles</h3>
+              <div class="treatment-card__price">
+                <span class="treatment-card__amount">238 €</span>
+              </div>
+            </div>
+            <ul class="treatment-card__features">
+              <li>Protocolo especial desensibilizante</li>
+              <li>Fórmula de liberación lenta</li>
+              <li>Sin molestias</li>
+            </ul>
+            <p class="treatment-card__ideal">Ideal para quien tiene sensibilidad dental</p>
+            <a href="#reservar" class="btn btn--outline btn--full">Reservar</a>
+          </div>
+
+          <div class="treatment-card treatment-card--small reveal-up" style="animation-delay:.4s">
+            <div class="treatment-card__header">
+              <span class="treatment-card__tag">Complemento</span>
+              <h3 class="treatment-card__name">Higiene Dental</h3>
+              <div class="treatment-card__price">
+                <span class="treatment-card__amount">69 €</span>
+              </div>
+            </div>
+            <ul class="treatment-card__features">
+              <li>30 minutos</li>
+              <li>Limpieza con ultrasonidos</li>
+              <li>Recomendada antes del blanqueamiento</li>
+            </ul>
+            <a href="#reservar" class="btn btn--outline btn--full">Reservar</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--dark" id="como-funciona">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag section-tag--gold reveal-up">Cómo funciona</p>
+          <h2 class="section-title section-title--light reveal-up" style="animation-delay:.08s">Tu blanqueamiento<br>en 3 pasos</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal-up" style="animation-delay:.1s">
+            <div class="step__number">01</div>
+            <div class="step__content">
+              <h3 class="step__title">Reserva tu cita</h3>
+              <p class="step__desc">Online o por WhatsApp. Disponibilidad de un día para otro. Sin compromiso.</p>
+            </div>
+          </div>
+          <div class="step reveal-up" style="animation-delay:.2s">
+            <div class="step__number">02</div>
+            <div class="step__content">
+              <h3 class="step__title">Ven a la clínica</h3>
+              <p class="step__desc">En Fuencarral 92, Madrid. Una sesión de 1 hora es todo lo que necesitas.</p>
+            </div>
+          </div>
+          <div class="step reveal-up" style="animation-delay:.3s">
+            <div class="step__number">03</div>
+            <div class="step__content">
+              <h3 class="step__title">Sonríe sin parar</h3>
+              <p class="step__desc">Resultados visibles desde el primer día. Hasta 8 tonos más blanco.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag reveal-up">Resultados</p>
+          <h2 class="section-title reveal-up" style="animation-delay:.08s">Ya tienen<br>su sonrisa</h2>
+          <p class="section-desc reveal-up" style="animation-delay:.16s">Resultados 100% reales de pacientes de On White Clinic. Sin filtros, sin retoques.</p>
+        </div>
+        <div class="results-grid">
+          <div class="result-card reveal-up" style="animation-delay:.1s">
+            <div class="result-card__before-after">
+              <div class="result-card__side result-card__side--before">
+                <span class="result-card__label">Antes</span>
+                <div class="result-card__img-placeholder"></div>
+              </div>
+              <div class="result-card__divider">
+                <div class="result-card__divider-handle"></div>
+              </div>
+              <div class="result-card__side result-card__side--after">
+                <span class="result-card__label">Después</span>
+                <div class="result-card__img-placeholder result-card__img-placeholder--after"></div>
+              </div>
+            </div>
+            <p class="result-card__caption">Blanqueamiento Combinado — 6 tonos de diferencia</p>
+          </div>
+          <div class="result-card reveal-up" style="animation-delay:.2s">
+            <div class="result-card__before-after">
+              <div class="result-card__side result-card__side--before">
+                <span class="result-card__label">Antes</span>
+                <div class="result-card__img-placeholder"></div>
+              </div>
+              <div class="result-card__divider">
+                <div class="result-card__divider-handle"></div>
+              </div>
+              <div class="result-card__side result-card__side--after">
+                <span class="result-card__label">Después</span>
+                <div class="result-card__img-placeholder result-card__img-placeholder--after"></div>
+              </div>
+            </div>
+            <p class="result-card__caption">Blanqueamiento Clínico — 3 tonos de diferencia</p>
+          </div>
+          <div class="result-card reveal-up" style="animation-delay:.3s">
+            <div class="result-card__before-after">
+              <div class="result-card__side result-card__side--before">
+                <span class="result-card__label">Antes</span>
+                <div class="result-card__img-placeholder"></div>
+              </div>
+              <div class="result-card__divider">
+                <div class="result-card__divider-handle"></div>
+              </div>
+              <div class="result-card__side result-card__side--after">
+                <span class="result-card__label">Después</span>
+                <div class="result-card__img-placeholder result-card__img-placeholder--after"></div>
+              </div>
+            </div>
+            <p class="result-card__caption">Dientes Sensibles — 5 tonos de diferencia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / Values -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag reveal-up">Lo que nos define</p>
+          <h2 class="section-title reveal-up" style="animation-delay:.08s">Ciencia, ética<br>y resultados</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal-up" style="animation-delay:.1s">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 56 56" fill="none"><path d="M28 8c-6 0-11 4-14 10s-3 14 2 20c3 3 7 7 12 10 5-3 9-7 12-10 5-6 5-14 2-20S34 8 28 8z" stroke="currentColor" stroke-width="1.2"/><circle cx="28" cy="26" r="4" stroke="currentColor" stroke-width="1.2"/></svg>
+            </div>
+            <h3 class="value-card__title">Vegano & Cruelty-free</h3>
+            <p class="value-card__desc">Productos sin origen animal ni testados en animales</p>
+          </div>
+          <div class="value-card reveal-up" style="animation-delay:.18s">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 56 56" fill="none"><path d="M14 42V20l14-10 14 10v22" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="28" cy="30" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M28 24v-4M34 30h4M28 36v4M22 30h-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="value-card__title">Base científica</h3>
+            <p class="value-card__desc">Protocolos respaldados por evidencia clínica</p>
+          </div>
+          <div class="value-card reveal-up" style="animation-delay:.26s">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 56 56" fill="none"><rect x="12" y="16" width="32" height="24" rx="4" stroke="currentColor" stroke-width="1.2"/><path d="M20 28l5 4 11-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="value-card__title">Producto premium</h3>
+            <p class="value-card__desc">FGM, marca líder brasileña en blanqueamiento profesional</p>
+          </div>
+          <div class="value-card reveal-up" style="animation-delay:.34s">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="16" stroke="currentColor" stroke-width="1.2"/><path d="M22 28c0-4 3-7 6-7s6 3 6 7-3 7-6 7-6-3-6-7z" stroke="currentColor" stroke-width="1.2"/><path d="M28 21v-5M28 40v-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="value-card__title">100% personalizado</h3>
+            <p class="value-card__desc">Férulas y concentraciones adaptadas a cada paciente</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift Card -->
+    <section class="section gift-section">
+      <div class="container">
+        <div class="gift-card reveal-up">
+          <div class="gift-card__content">
+            <p class="section-tag section-tag--gold">Regala una sonrisa</p>
+            <h2 class="gift-card__title">El mejor regalo es una sonrisa</h2>
+            <p class="gift-card__desc">Regala un blanqueamiento combinado por <strong>249&nbsp;EUR</strong> <s>299&nbsp;EUR</s>. Entrega digital inmediata por email.</p>
+            <a href="#" class="btn btn--gold btn--lg">Comprar tarjeta regalo</a>
+          </div>
+          <div class="gift-card__visual">
+            <div class="gift-card__mockup">
+              <div class="gift-card__mockup-inner">
+                <span class="gift-card__mockup-logo"><span class="logo-on">On</span><span class="logo-white">White</span></span>
+                <span class="gift-card__mockup-text">Tarjeta Regalo</span>
+                <span class="gift-card__mockup-amount">249 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <p class="section-tag reveal-up">Preguntas frecuentes</p>
+          <h2 class="section-title reveal-up" style="animation-delay:.08s">Resolvemos<br>tus dudas</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal-up" style="animation-delay:.08s">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>¿Daña el esmalte?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <p>No. Los productos que usamos están clínicamente testados y no dañan el esmalte dental. Utilizamos FGM, una marca profesional con décadas de respaldo científico.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal-up" style="animation-delay:.14s">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>¿Duele?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <p>No debería. Usamos protocolo de desensibilización en todos los tratamientos. Si tienes sensibilidad dental, tenemos un tratamiento específico para ti por 238 EUR.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal-up" style="animation-delay:.2s">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>¿Cuánto dura el resultado?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <p>Entre 1 y 3 años dependiendo del tratamiento y tus hábitos. El blanqueamiento combinado (nuestro best seller) dura de 2 a 3 años.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal-up" style="animation-delay:.26s">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>¿Puedo financiarlo?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <p>Sí. Financiación desde 51 EUR/mes sin intereses. Te lo gestionamos todo en la clínica.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal-up" style="animation-delay:.32s">
+            <button class="faq-item__question" aria-expanded="false">
+              <span>¿Necesito limpieza antes?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-item__answer">
+              <p>Recomendamos una profilaxis antes del blanqueamiento para mejores resultados. Solo 69 EUR y 30 minutos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section--cta" id="reservar">
+      <div class="container">
+        <div class="cta-block reveal-up">
+          <h2 class="cta-block__title">¿Preparado para tu mejor sonrisa?</h2>
+          <p class="cta-block__desc">Reserva tu cita. Una hora es todo lo que necesitas.</p>
+          <div class="cta-block__actions">
+            <a href="#" class="btn btn--gold btn--lg">Reservar cita ahora</a>
+            <a href="https://wa.me/34603913091" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <p class="cta-block__phone">o llámanos al <a href="tel:+34603913091">603 913 091</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <a href="/" class="footer__logo">
+            <span class="logo-on">On</span><span class="logo-white">White</span>
+          </a>
+          <p class="footer__address">Fuencarral 92, 28004 Madrid</p>
+          <p class="footer__contact">
+            <a href="tel:+34603913091">603 913 091</a><br>
+            <a href="mailto:info@onwhiteclinic.com">info@onwhiteclinic.com</a>
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Tratamientos</h4>
+          <a href="#" class="footer__link">Blanqueamiento en Casa</a>
+          <a href="#" class="footer__link">Blanqueamiento Clínico</a>
+          <a href="blanqueamiento-combinado.html" class="footer__link">Blanqueamiento Combinado</a>
+          <a href="#" class="footer__link">Dientes Sensibles</a>
+          <a href="#" class="footer__link">Higiene Dental</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Legal</h4>
+          <a href="#" class="footer__link">Política de privacidad</a>
+          <a href="#" class="footer__link">Política de cookies</a>
+          <a href="#" class="footer__link">Aviso legal</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Síguenos</h4>
+          <a href="https://www.instagram.com/onwhiteclinic/" class="footer__link footer__link--social" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @onwhiteclinic
+          </a>
+          <p class="footer__hours">L-V 10:00 – 20:00</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 On White Clinic. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating -->
+  <a href="https://wa.me/34603913091" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
