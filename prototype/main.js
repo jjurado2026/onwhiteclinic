@@ -1,139 +1,262 @@
-/* ============================================
-   ON WHITE CLINIC — Electric Cinema JS
-   ============================================ */
-(function () {
-  'use strict';
+/* ============================================================
+   ON WHITE CLINIC — Main JavaScript
+   All interactivity & animations for the dental clinic site.
+   Alive, fun, and buttery smooth.
+   ============================================================ */
+;(function () {
+  'use strict'
 
-  /* ---------- Scroll Reveal (staggered) ---------- */
-  const revealEls = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left');
-  const revObs = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('vis'); revObs.unobserve(e.target); }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  revealEls.forEach((el) => revObs.observe(el));
-
-  /* ---------- Header scroll ---------- */
-  const header = document.getElementById('header');
-  const stickyBar = document.getElementById('stickyBar');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (header) header.classList.toggle('scrolled', y > 40);
-    if (stickyBar) stickyBar.classList.toggle('visible', y > 500);
-  }, { passive: true });
-
-  /* ---------- Mobile Menu ---------- */
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    });
-    mobileMenu.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => {
-        burger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
+  /* ----------------------------------------------------------
+     1. SCROLL REVEAL (IntersectionObserver)
+     Elements with .reveal or .reveal-scale get class "vis"
+     once they enter the viewport. CSS handles the actual
+     animation via animation-delay set as inline styles.
+     ---------------------------------------------------------- */
+  const revealObserver = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis')
+          observer.unobserve(entry.target)
+        }
       })
-    );
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+  )
+
+  document.querySelectorAll('.reveal, .reveal-scale').forEach(function (el) {
+    revealObserver.observe(el)
+  })
+
+  /* ----------------------------------------------------------
+     2. HEADER SCROLL — compact header + sticky CTA bar
+     - Header gets "scrolled" class after 40px
+     - Sticky bar becomes "visible" after 500px
+     ---------------------------------------------------------- */
+  var header = document.getElementById('header')
+  var stickyBar = document.getElementById('stickyBar')
+
+  window.addEventListener(
+    'scroll',
+    function () {
+      var y = window.scrollY
+
+      if (header) {
+        header.classList.toggle('scrolled', y > 40)
+      }
+
+      if (stickyBar) {
+        stickyBar.classList.toggle('visible', y > 500)
+      }
+    },
+    { passive: true }
+  )
+
+  /* ----------------------------------------------------------
+     3. MOBILE MENU — burger toggle
+     Toggles "active" on burger + mobile menu, locks body
+     scroll. Closes when any nav link is tapped.
+     ---------------------------------------------------------- */
+  var burger = document.getElementById('burger')
+  var mobileMenu = document.getElementById('mobileMenu')
+
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', function () {
+      burger.classList.toggle('active')
+      mobileMenu.classList.toggle('active')
+      document.body.style.overflow = mobileMenu.classList.contains('active')
+        ? 'hidden'
+        : ''
+    })
+
+    // Close menu on any link click
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        burger.classList.remove('active')
+        mobileMenu.classList.remove('active')
+        document.body.style.overflow = ''
+      })
+    })
   }
 
-  /* ---------- FAQ Accordion ---------- */
-  document.querySelectorAll('.faq-item').forEach((item) => {
-    const btn = item.querySelector('.faq-item__q');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const open = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach((i) => {
-        i.classList.remove('active');
-        const b = i.querySelector('.faq-item__q');
-        if (b) b.setAttribute('aria-expanded', 'false');
-      });
-      if (!open) { item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
-    });
-  });
+  /* ----------------------------------------------------------
+     4. FAQ ACCORDION
+     Only one item open at a time. Clicking an open item
+     closes it. aria-expanded toggled for accessibility.
+     ---------------------------------------------------------- */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var btn = item.querySelector('.faq-item__q')
+    if (!btn) return
 
-  /* ---------- Smooth Scroll ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener('click', function (e) {
-      const t = document.querySelector(this.getAttribute('href'));
-      if (t) {
-        e.preventDefault();
-        const off = (header ? header.offsetHeight : 0) + 16;
-        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - off, behavior: 'smooth' });
+    btn.addEventListener('click', function () {
+      var isActive = item.classList.contains('active')
+
+      // Close every item first
+      document.querySelectorAll('.faq-item').forEach(function (i) {
+        i.classList.remove('active')
+        var b = i.querySelector('.faq-item__q')
+        if (b) b.setAttribute('aria-expanded', 'false')
+      })
+
+      // Re-open this one only if it was closed
+      if (!isActive) {
+        item.classList.add('active')
+        btn.setAttribute('aria-expanded', 'true')
       }
-    });
-  });
+    })
+  })
 
-  /* ---------- 3D Card Tilt ---------- */
-  const tiltCards = document.querySelectorAll('.t-card');
-  tiltCards.forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-6px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-      card.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
-      setTimeout(() => { card.style.transition = ''; }, 600);
-    });
-  });
+  /* ----------------------------------------------------------
+     5. SMOOTH SCROLL — anchor links
+     Offsets by header height + 16px breathing room.
+     ---------------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var targetId = anchor.getAttribute('href')
+      if (targetId === '#' || targetId.length < 2) return
 
-  /* ---------- Parallax on Hero Image ---------- */
-  const heroImg = document.querySelector('.hero__img-wrap');
-  if (heroImg && window.innerWidth > 768) {
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight * 1.2) {
-        heroImg.style.transform = `translateY(${y * 0.08}px)`;
+      var target = document.querySelector(targetId)
+      if (!target) return
+
+      e.preventDefault()
+
+      var headerHeight = header ? header.offsetHeight : 0
+      var top =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight -
+        16
+
+      window.scrollTo({ top: top, behavior: 'smooth' })
+    })
+  })
+
+  /* ----------------------------------------------------------
+     6. 3D CARD TILT — treatment cards (.t-card)
+     Mouse position mapped to subtle perspective rotation.
+     Springs back with a custom cubic-bezier on leave.
+     ---------------------------------------------------------- */
+  document.querySelectorAll('.t-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect()
+      var x = (e.clientX - rect.left) / rect.width - 0.5   // -0.5 … 0.5
+      var y = (e.clientY - rect.top) / rect.height - 0.5
+
+      card.style.transform =
+        'perspective(600px) rotateY(' +
+        x * 10 +
+        'deg) rotateX(' +
+        -y * 10 +
+        'deg) translateY(-8px)'
+    })
+
+    card.addEventListener('mouseleave', function () {
+      card.style.transform = ''
+      card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+
+      setTimeout(function () {
+        card.style.transition = ''
+      }, 600)
+    })
+  })
+
+  /* ----------------------------------------------------------
+     7. PARALLAX ON HERO — image + floating cards
+     Only active above 768px viewport width.
+     Runs until scrollY exceeds 1.2x viewport height.
+     ---------------------------------------------------------- */
+  var heroImg = document.querySelector('.hero__img-wrap')
+  var floatRating = document.querySelector('.hero__float--rating')
+  var floatCases = document.querySelector('.hero__float--cases')
+
+  window.addEventListener(
+    'scroll',
+    function () {
+      if (window.innerWidth <= 768) return
+
+      var y = window.scrollY
+      if (y > window.innerHeight * 1.2) return
+
+      if (heroImg) {
+        heroImg.style.transform = 'translateY(' + y * 0.08 + 'px)'
       }
-    }, { passive: true });
-  }
-
-  /* ---------- Float cards parallax ---------- */
-  const floatRating = document.querySelector('.hero__float--rating');
-  const floatCases = document.querySelector('.hero__float--cases');
-  if (floatRating && floatCases && window.innerWidth > 768) {
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight) {
-        floatRating.style.transform = `translateY(${y * -0.12}px)`;
-        floatCases.style.transform = `translateY(${y * -0.06}px)`;
+      if (floatRating) {
+        floatRating.style.transform = 'translateY(' + y * -0.12 + 'px)'
       }
-    }, { passive: true });
-  }
-
-  /* ---------- Counter Animation ---------- */
-  const counters = document.querySelectorAll('[data-count]');
-  const counterObs = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        const el = e.target;
-        const target = el.getAttribute('data-count');
-        const isNum = !isNaN(target);
-        if (!isNum) return;
-        const end = parseInt(target, 10);
-        const prefix = el.getAttribute('data-prefix') || '';
-        const suffix = el.getAttribute('data-suffix') || '';
-        let start = 0;
-        const duration = 2000;
-        const startTime = performance.now();
-        const step = (now) => {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 4);
-          const current = Math.round(eased * end);
-          el.textContent = prefix + current.toLocaleString('es-ES') + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-        counterObs.unobserve(el);
+      if (floatCases) {
+        floatCases.style.transform = 'translateY(' + y * -0.06 + 'px)'
       }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach((c) => counterObs.observe(c));
+    },
+    { passive: true }
+  )
 
-})();
+  /* ----------------------------------------------------------
+     8. COUNTER ANIMATION — animate numbers on scroll
+     Uses requestAnimationFrame for smooth 60fps counting.
+     Easing: ease-out quart — 1 - (1 - t)^4
+     Locale: es-ES for thousand separators (1.250, 3.400…)
+     ---------------------------------------------------------- */
+  var counterObserver = new IntersectionObserver(
+    function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return
+
+        var el = entry.target
+        observer.unobserve(el)
+
+        var target = parseInt(el.getAttribute('data-count'), 10)
+        if (isNaN(target)) return
+
+        var prefix = el.getAttribute('data-prefix') || ''
+        var suffix = el.getAttribute('data-suffix') || ''
+        var duration = 2000
+        var startTime = null
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp
+          var elapsed = timestamp - startTime
+          var progress = Math.min(elapsed / duration, 1)
+
+          // Ease-out quart
+          var eased = 1 - Math.pow(1 - progress, 4)
+          var current = Math.round(eased * target)
+
+          el.textContent =
+            prefix + current.toLocaleString('es-ES') + suffix
+
+          if (progress < 1) {
+            requestAnimationFrame(step)
+          }
+        }
+
+        requestAnimationFrame(step)
+      })
+    },
+    { threshold: 0.5 }
+  )
+
+  document.querySelectorAll('[data-count]').forEach(function (el) {
+    counterObserver.observe(el)
+  })
+
+  /* ----------------------------------------------------------
+     9. INSTAGRAM GRID HOVER — sibling dim effect
+     Hovering one image dims all siblings to 0.5 opacity,
+     making the hovered photo pop.
+     ---------------------------------------------------------- */
+  var instaImages = document.querySelectorAll('.insta__grid img')
+
+  instaImages.forEach(function (img) {
+    img.addEventListener('mouseenter', function () {
+      instaImages.forEach(function (sibling) {
+        if (sibling !== img) sibling.style.opacity = '0.5'
+      })
+    })
+
+    img.addEventListener('mouseleave', function () {
+      instaImages.forEach(function (sibling) {
+        sibling.style.opacity = '1'
+      })
+    })
+  })
+})()
