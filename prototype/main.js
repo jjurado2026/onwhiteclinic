@@ -1,49 +1,29 @@
-/* ============================================
-   ON WHITE CLINIC — Main JS
-   ============================================ */
-
+/* ON WHITE CLINIC — Main JS */
 (function () {
   'use strict';
 
   // --- Scroll Reveal ---
-  const revealElements = document.querySelectorAll('.reveal-up');
-  const revealObserver = new IntersectionObserver(
+  const revealObs = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
   );
-  revealElements.forEach((el) => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach((el) => revealObs.observe(el));
 
-  // --- Header scroll ---
+  // --- Header scroll shadow ---
   const header = document.getElementById('header');
-  let lastScrollY = 0;
-  function handleScroll() {
-    const scrollY = window.scrollY;
-    if (scrollY > 60) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-
-    // Booking bar
-    const bookingBar = document.getElementById('bookingBar');
-    if (bookingBar) {
-      if (scrollY > 400) {
-        bookingBar.classList.add('visible');
-      } else {
-        bookingBar.classList.remove('visible');
-      }
-    }
-
-    lastScrollY = scrollY;
-  }
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  const stickyBar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (header) header.classList.toggle('scrolled', y > 40);
+    if (stickyBar) stickyBar.classList.toggle('visible', y > 500);
+  }, { passive: true });
 
   // --- Mobile menu ---
   const burger = document.getElementById('burger');
@@ -52,12 +32,10 @@
     burger.addEventListener('click', () => {
       burger.classList.toggle('active');
       mobileMenu.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active')
-        ? 'hidden'
-        : '';
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
+    mobileMenu.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
         burger.classList.remove('active');
         mobileMenu.classList.remove('active');
         document.body.style.overflow = '';
@@ -66,33 +44,31 @@
   }
 
   // --- FAQ Accordion ---
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach((item) => {
-    const btn = item.querySelector('.faq-item__question');
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const btn = item.querySelector('.faq-item__q');
+    if (!btn) return;
     btn.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      // Close all
-      faqItems.forEach((i) => {
+      const open = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach((i) => {
         i.classList.remove('active');
-        i.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+        const b = i.querySelector('.faq-item__q');
+        if (b) b.setAttribute('aria-expanded', 'false');
       });
-      // Open clicked (if was closed)
-      if (!isActive) {
+      if (!open) {
         item.classList.add('active');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
 
-  // --- Smooth scroll for anchor links ---
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
+  // --- Smooth scroll ---
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', function (e) {
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) {
         e.preventDefault();
-        const headerHeight = header.offsetHeight + 20;
-        const y = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const off = (header ? header.offsetHeight : 0) + 16;
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - off, behavior: 'smooth' });
       }
     });
   });
