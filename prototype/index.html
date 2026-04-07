@@ -94,11 +94,7 @@
       </div>
       <div class="hero__content">
         <div class="hero__text">
-          <div class="hero__badge reveal">
-            <span class="hero__badge-dot"></span>
-            Clínica mejor valorada
-          </div>
-          <h1 class="hero__title reveal" style="animation-delay:.06s">
+          <h1 class="hero__title reveal">
             Clínica nº1 en<br>blanqueamientos<br>dentales en <em>Madrid</em>
           </h1>
           <p class="hero__desc reveal" style="animation-delay:.12s">SOLO hacemos blanqueamientos dentales, SOLO tendrás que venir una vez, 1 hora. Clínica mejor valorada.</p>
@@ -110,7 +106,7 @@
         </div>
         <div class="hero__visual reveal" style="animation-delay:.15s">
           <div class="hero__img-wrap">
-            <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=900&q=80&auto=format&fit=crop&crop=faces" alt="Paciente con sonrisa perfecta" loading="eager">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80&auto=format&fit=crop" alt="Paciente con sonrisa perfecta" loading="eager">
             <div class="hero__img-overlay"></div>
           </div>
           <div class="hero__float hero__float--rating">
@@ -161,10 +157,11 @@
           </div>
           <h2 class="s-title reveal" style="animation-delay:.06s">Elige tu <em>tratamiento</em></h2>
         </div>
-        <div class="t-grid">
+        <div class="t-slider">
+          <div class="t-slider__track">
 
           <!-- Card 1: En casa -->
-          <div class="t-card reveal" style="animation-delay:.05s">
+          <div class="t-card">
             <div class="t-card__icon-wrap">
               <svg viewBox="0 0 32 32" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 14L16 4L27 14V27C27 27.6 26.6 28 26 28H6C5.4 28 5 27.6 5 27V14Z"/>
@@ -179,7 +176,7 @@
           </div>
 
           <!-- Card 2: Clínico -->
-          <div class="t-card reveal" style="animation-delay:.1s">
+          <div class="t-card">
             <div class="t-card__icon-wrap">
               <svg viewBox="0 0 32 32" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 2L10 14H16L13 30L22 18H16L19 2Z"/>
@@ -193,7 +190,7 @@
           </div>
 
           <!-- Card 3: Combinado — FEATURED -->
-          <div class="t-card t-card--best reveal" style="animation-delay:.15s">
+          <div class="t-card t-card--best">
             <div class="t-card__badge">★ Mejor valorado</div>
             <div class="t-card__icon-wrap t-card__icon-wrap--best">
               <svg viewBox="0 0 32 32" fill="none" stroke="var(--yellow)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -208,7 +205,7 @@
           </div>
 
           <!-- Card 4: Dientes sensibles -->
-          <div class="t-card reveal" style="animation-delay:.2s">
+          <div class="t-card">
             <div class="t-card__icon-wrap">
               <svg viewBox="0 0 32 32" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 28C16 28 27 22 27 13C27 9 24 5 20.5 5C18.2 5 16.5 6.5 16 7.5C15.5 6.5 13.8 5 11.5 5C8 5 5 9 5 13C5 22 16 28 16 28Z"/>
@@ -223,7 +220,7 @@
           </div>
 
           <!-- Card 5: Higiene -->
-          <div class="t-card reveal" style="animation-delay:.25s">
+          <div class="t-card">
             <div class="t-card__icon-wrap">
               <svg viewBox="0 0 32 32" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 4L18 10L16 12L14 10L16 4Z"/>
@@ -242,6 +239,7 @@
             <a href="#reservar" class="btn btn--outline btn--full btn--sm">Coge tu cita</a>
           </div>
 
+          </div>
         </div>
       </div>
     </section>
@@ -260,18 +258,16 @@
         <div class="promo__text reveal">
           <p class="promo__label">En el día de la madre regala</p>
           <h2 class="promo__title">Un detalle<br>que se nota.</h2>
-          <p class="promo__subtitle">Blanqueamiento dental profesional</p>
+          <h3 class="promo__subtitle">Blanqueamiento dental profesional</h3>
           <div class="promo__pricing">
             <span class="promo__old">ANTES 299€</span>
             <span class="promo__arrow">→</span>
             <span class="promo__new">AHORA 249€</span>
           </div>
+          <a href="#reservar" class="btn btn--blue btn--lg">¡Regala blanqueamiento!</a>
         </div>
         <div class="promo__visual reveal" style="animation-delay:.1s">
           <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=500&q=80&auto=format&fit=crop" alt="Regalo especial" class="promo__gift-img" loading="lazy">
-        </div>
-        <div class="promo__cta reveal" style="animation-delay:.15s">
-          <a href="#reservar" class="btn btn--blue btn--lg">¡Regala blanqueamiento!</a>
         </div>
       </div>
     </section>
@@ -391,99 +387,46 @@
           <div class="s-tag reveal">Compara</div>
           <h2 class="s-title reveal" style="animation-delay:.06s">¿Por qué <em>elegirnos</em>?</h2>
         </div>
-        <div class="compare-cols">
-          <div class="compare-col compare-col--us reveal" style="animation-delay:.05s">
-            <div class="compare-col__head">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18.5L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z"/></svg>
-              ONWhite
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>Precio competitivo. Ahorro aprox. con otras clínicas: <strong>300€</strong></span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>FGM marca premium líder mercado blanqueamientos</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>Dentistas especializados exclusivamente en blanqueamientos dentales</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>Tratamientos 100% personalizados</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>Producto exclusivo para la sensibilidad</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>Una única visita en clínica 1 hora</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--yes">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-              </div>
-              <span>Agendar por web rápida y sencilla, cita de un día para otro</span>
-            </div>
+        <div class="compare-table reveal" style="animation-delay:.1s">
+          <div class="compare-table__row compare-table__row--header">
+            <div class="compare-table__feature"></div>
+            <div class="compare-table__us">ONWhite</div>
+            <div class="compare-table__them">Otros</div>
           </div>
-          <div class="compare-col compare-col--them reveal" style="animation-delay:.12s">
-            <div class="compare-col__head">Otras clínicas</div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Precios entre 350€ y 700€</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Marcas genéricas sin especialización</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Dentistas generalistas</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Tratamientos estándar</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Sin protocolo de sensibilidad</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Múltiples visitas necesarias</span>
-            </div>
-            <div class="compare-row">
-              <div class="compare-dot compare-dot--no">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </div>
-              <span>Citas con semanas de espera</span>
-            </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Precio</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> 199€ – 299€</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> 350€ – 700€</div>
+          </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Producto</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> FGM Premium</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> Marcas genéricas</div>
+          </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Especialización</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> Solo blanqueamiento</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> Generalistas</div>
+          </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Personalización</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> 100% personalizado</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> Estándar</div>
+          </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Sensibilidad</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> Protocolo exclusivo</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> Sin protocolo</div>
+          </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Visitas</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> 1 visita, 1 hora</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> Múltiples visitas</div>
+          </div>
+          <div class="compare-table__row">
+            <div class="compare-table__feature">Cita</div>
+            <div class="compare-table__us"><span class="compare-check">✓</span> De un día para otro</div>
+            <div class="compare-table__them"><span class="compare-x">✗</span> Semanas de espera</div>
           </div>
         </div>
       </div>
@@ -501,81 +444,33 @@
         </div>
         <div class="ba-grid">
           <div class="ba-card reveal" style="animation-delay:.05s">
-            <div class="ba-card__imgs">
-              <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__tag">Antes</span>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
-              </div>
-              <div class="ba-card__div"></div>
-              <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__tag">Ahora</span>
-                <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=400&q=75&auto=format&fit=crop&crop=faces" alt="Después del tratamiento" loading="lazy">
-              </div>
+            <div class="ba-card__top">
+              <span class="ba-card__tag">Antes</span>
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
+            </div>
+            <div class="ba-card__bottom">
+              <span class="ba-card__tag ba-card__tag--after">Ahora</span>
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=75&auto=format&fit=crop" alt="Después del tratamiento" loading="lazy">
             </div>
           </div>
-          <div class="ba-card reveal" style="animation-delay:.1s">
-            <div class="ba-card__imgs">
-              <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__tag">Antes</span>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
-              </div>
-              <div class="ba-card__div"></div>
-              <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__tag">Ahora</span>
-                <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=400&q=75&auto=format&fit=crop&crop=faces" alt="Después del tratamiento" loading="lazy">
-              </div>
+          <div class="ba-card reveal" style="animation-delay:.12s">
+            <div class="ba-card__top">
+              <span class="ba-card__tag">Antes</span>
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
+            </div>
+            <div class="ba-card__bottom">
+              <span class="ba-card__tag ba-card__tag--after">Ahora</span>
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=75&auto=format&fit=crop" alt="Después del tratamiento" loading="lazy">
             </div>
           </div>
-          <div class="ba-card reveal" style="animation-delay:.15s">
-            <div class="ba-card__imgs">
-              <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__tag">Antes</span>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
-              </div>
-              <div class="ba-card__div"></div>
-              <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__tag">Ahora</span>
-                <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=400&q=75&auto=format&fit=crop&crop=faces" alt="Después del tratamiento" loading="lazy">
-              </div>
+          <div class="ba-card reveal" style="animation-delay:.19s">
+            <div class="ba-card__top">
+              <span class="ba-card__tag">Antes</span>
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
             </div>
-          </div>
-          <div class="ba-card reveal" style="animation-delay:.2s">
-            <div class="ba-card__imgs">
-              <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__tag">Antes</span>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
-              </div>
-              <div class="ba-card__div"></div>
-              <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__tag">Ahora</span>
-                <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=400&q=75&auto=format&fit=crop&crop=faces" alt="Después del tratamiento" loading="lazy">
-              </div>
-            </div>
-          </div>
-          <div class="ba-card reveal" style="animation-delay:.25s">
-            <div class="ba-card__imgs">
-              <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__tag">Antes</span>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
-              </div>
-              <div class="ba-card__div"></div>
-              <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__tag">Ahora</span>
-                <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=400&q=75&auto=format&fit=crop&crop=faces" alt="Después del tratamiento" loading="lazy">
-              </div>
-            </div>
-          </div>
-          <div class="ba-card reveal" style="animation-delay:.3s">
-            <div class="ba-card__imgs">
-              <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__tag">Antes</span>
-                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes del tratamiento" loading="lazy">
-              </div>
-              <div class="ba-card__div"></div>
-              <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__tag">Ahora</span>
-                <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=400&q=75&auto=format&fit=crop&crop=faces" alt="Después del tratamiento" loading="lazy">
-              </div>
+            <div class="ba-card__bottom">
+              <span class="ba-card__tag ba-card__tag--after">Ahora</span>
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=75&auto=format&fit=crop" alt="Después del tratamiento" loading="lazy">
             </div>
           </div>
         </div>
@@ -769,43 +664,12 @@
     <section class="section insta" id="noticias">
       <div class="container">
         <p class="insta__tag reveal">#sonrisaonwhite <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener">@onwhiteclinic</a></p>
-        <div class="insta-grid reveal" style="animation-delay:.08s">
-          <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener" class="insta-grid__item">
-            <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=300&q=75&auto=format&fit=crop&crop=faces" alt="Sonrisa ONWhite" loading="lazy">
-            <div class="insta-grid__overlay">
-              <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener" class="insta-grid__item">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=300&q=75&auto=format&fit=crop" alt="Sonrisa ONWhite" loading="lazy">
-            <div class="insta-grid__overlay">
-              <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener" class="insta-grid__item">
-            <img src="https://images.unsplash.com/photo-1543596628-0cca3e9ebfd6?w=300&q=75&auto=format&fit=crop&crop=faces" alt="Sonrisa ONWhite" loading="lazy">
-            <div class="insta-grid__overlay">
-              <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener" class="insta-grid__item">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=75&auto=format&fit=crop&crop=faces" alt="Sonrisa ONWhite" loading="lazy">
-            <div class="insta-grid__overlay">
-              <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener" class="insta-grid__item">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=75&auto=format&fit=crop&crop=faces" alt="Sonrisa ONWhite" loading="lazy">
-            <div class="insta-grid__overlay">
-              <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/onwhiteclinic/" target="_blank" rel="noopener" class="insta-grid__item">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&q=75&auto=format&fit=crop" alt="Clínica ONWhite" loading="lazy">
-            <div class="insta-grid__overlay">
-              <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </div>
-          </a>
+        <div class="insta-embed reveal" style="animation-delay:.08s">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-0c1e5f3a-6b4e-4b1c-8e2f-1a0a4e3f0c1e" data-elfsight-app-lazy></div>
+          <noscript>
+            <p style="text-align:center;padding:40px;color:var(--grey-400);">Síguenos en <a href="https://www.instagram.com/onwhiteclinic/" style="color:var(--blue);font-weight:700;">@onwhiteclinic</a> para ver nuestros resultados</p>
+          </noscript>
         </div>
       </div>
     </section>
