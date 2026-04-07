@@ -83,10 +83,11 @@
     <!-- ==================== HERO ==================== -->
     <section class="hero">
       <div class="hero__bg">
-        <div class="hero__bg-shape hero__bg-shape--1"></div>
-        <div class="hero__bg-shape hero__bg-shape--2"></div>
-        <div class="hero__bg-shape hero__bg-shape--3"></div>
-        <div class="hero__bg-grid"></div>
+        <div class="hero__gradient"></div>
+        <div class="hero__grid-lines"></div>
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__grain"></div>
       </div>
       <div class="hero__content">
         <div class="hero__text">
@@ -105,23 +106,21 @@
           </div>
         </div>
         <div class="hero__visual reveal" style="animation-delay:.15s">
-          <div class="hero__image-frame">
-            <div class="hero__image-placeholder">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1"><circle cx="32" cy="24" r="12"/><path d="M12 56c0-11 9-20 20-20s20 9 20 20"/></svg>
-              Foto paciente sonriendo
+          <div class="hero__img-wrap">
+            <img src="https://images.unsplash.com/photo-1581585758680-4d0ada5f386f?w=800&q=80&auto=format&fit=crop&crop=faces" alt="Paciente con sonrisa perfecta" loading="eager">
+            <div class="hero__img-overlay"></div>
+          </div>
+          <div class="hero__float hero__float--rating">
+            <div>
+              <div class="hero__float-score" data-count="5" data-suffix="/5">5/5</div>
+              <div class="hero__float-stars">★★★★★</div>
+              <div class="hero__float-label">Google Reviews</div>
             </div>
           </div>
-          <div class="hero__float-card hero__float-card--rating">
+          <div class="hero__float hero__float--cases">
             <div>
-              <div class="rating-num">5/5</div>
-              <div class="stars">★★★★★</div>
-              <div class="rating-text">Google Reviews</div>
-            </div>
-          </div>
-          <div class="hero__float-card hero__float-card--cases">
-            <div>
-              <div class="cases-num">+2.000</div>
-              <div class="cases-text">Casos de éxito</div>
+              <div class="hero__float-num" data-count="2000" data-prefix="+">+2.000</div>
+              <div class="hero__float-text">Casos de éxito</div>
             </div>
           </div>
         </div>
@@ -147,14 +146,18 @@
     </div>
 
     <!-- ==================== TREATMENTS ==================== -->
-    <section class="section" id="tratamientos">
+    <section class="section treatments" id="tratamientos">
       <div class="container">
-        <div class="treatments-grid">
+        <div class="s-header">
+          <div class="s-tag reveal">Tratamientos</div>
+          <h2 class="s-title reveal" style="animation-delay:.06s">Elige tu <em>tratamiento</em></h2>
+        </div>
+        <div class="t-grid">
 
           <div class="t-card reveal" style="animation-delay:.05s">
             <div class="t-card__price">199€</div>
             <h3 class="t-card__name">Blanqueamiento en casa</h3>
-            <div class="t-card__duration">20 días</div>
+            <div class="t-card__dur">20 días</div>
             <p class="t-card__desc">Kit de blanqueamiento dental personalizado para realizar en casa.</p>
             <a href="#reservar" class="btn btn--outline btn--full btn--sm">Coge tu cita</a>
           </div>
@@ -162,16 +165,16 @@
           <div class="t-card reveal" style="animation-delay:.1s">
             <div class="t-card__price">220€</div>
             <h3 class="t-card__name">Blanqueamiento clínico</h3>
-            <div class="t-card__duration">24 min</div>
+            <div class="t-card__dur">24 min</div>
             <p class="t-card__desc">Gel blanqueador con luz LED para resultados inmediatos.</p>
             <a href="#reservar" class="btn btn--outline btn--full btn--sm">Coge tu cita</a>
           </div>
 
-          <div class="t-card t-card--featured reveal" style="animation-delay:.15s">
-            <div class="t-card__badge">Mejor valorado</div>
+          <div class="t-card t-card--best reveal" style="animation-delay:.15s">
+            <div class="t-card__badge">★ Mejor valorado</div>
             <div class="t-card__price">299€</div>
             <h3 class="t-card__name">Blanqueamiento combinado</h3>
-            <div class="t-card__duration">20 días</div>
+            <div class="t-card__dur">20 días</div>
             <p class="t-card__desc">Nuestro blanqueamiento mejor valorado. Sesión clínica (20 MIN) + Blanqueamiento en casa (20 DÍAS).</p>
             <a href="blanqueamiento-combinado.html" class="btn btn--blue btn--full btn--sm">Ver tratamiento</a>
           </div>
@@ -179,7 +182,7 @@
           <div class="t-card reveal" style="animation-delay:.2s">
             <div class="t-card__price">238€</div>
             <h3 class="t-card__name">Blanqueamiento dientes sensibles</h3>
-            <div class="t-card__duration">20 días</div>
+            <div class="t-card__dur">20 días</div>
             <p class="t-card__desc">Utilizamos productos desensibilizantes antes del tratamiento para garantizar una experiencia cómoda y segura.</p>
             <a href="#reservar" class="btn btn--outline btn--full btn--sm">Coge tu cita</a>
           </div>
@@ -187,7 +190,7 @@
           <div class="t-card reveal" style="animation-delay:.25s">
             <div class="t-card__price">69€</div>
             <h3 class="t-card__name">Higiene dental</h3>
-            <div class="t-card__duration">30 min</div>
+            <div class="t-card__dur">30 min</div>
             <p class="t-card__desc">Eliminamos placa y sarro utilizando tecnología de ultrasonidos.</p>
             <a href="#reservar" class="btn btn--outline btn--full btn--sm">Coge tu cita</a>
           </div>
@@ -218,8 +221,9 @@
     <!-- ==================== USP / VALOR ==================== -->
     <section class="section" id="nosotros">
       <div class="container">
-        <div class="usp__header reveal">
-          <h2 class="usp__title">Única clínica dental especializada<br>en España en blanqueamiento dental</h2>
+        <div class="s-header">
+          <div class="s-tag reveal">Nosotros</div>
+          <h2 class="s-title reveal" style="animation-delay:.06s">Única clínica dental especializada<br>en España en <em>blanqueamiento dental</em></h2>
         </div>
 
         <div class="usp-grid">
@@ -253,118 +257,121 @@
           </div>
         </div>
 
-        <div class="usp__price-compare reveal" style="animation-delay:.1s">
-          <p>Nuestros precios van de 199€ a 299€, frente a los 350€ – 700€ habituales en clínicas tradicionales</p>
-          <p class="highlight">PAGAS MENOS CON LA MEJOR CALIDAD</p>
+        <div class="price-banner reveal" style="animation-delay:.1s">
+          <p class="price-banner__text">Nuestros precios van de 199€ a 299€, frente a los 350€ – 700€ habituales en clínicas tradicionales</p>
+          <p class="price-banner__highlight">PAGAS MENOS CON LA MEJOR CALIDAD</p>
         </div>
 
-        <div class="usp__stats reveal" style="animation-delay:.15s">
-          <div class="stat-card">
-            <div class="stat-card__value">Una única visita,<br>menos de 1 hora</div>
+        <div class="stats-row reveal" style="animation-delay:.15s">
+          <div class="stat-pill">
+            <div class="stat-pill__val">Una única visita,<br>menos de 1 hora</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-card__value">Clínica mejor<br>valorada</div>
+          <div class="stat-pill">
+            <div class="stat-pill__val">Clínica mejor<br>valorada</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-card__value">Financiación<br>desde 51€/mes</div>
+          <div class="stat-pill">
+            <div class="stat-pill__val">Financiación<br>desde 51€/mes</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-card__value">FGM marca premium<br>líder en el mercado</div>
+          <div class="stat-pill">
+            <div class="stat-pill__val">FGM marca premium<br>líder en el mercado</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==================== COMPARISON: ¿Por qué elegirnos? ==================== -->
-    <section class="section comparison">
+    <section class="section compare">
       <div class="container">
-        <h2 class="comparison__title reveal">¿Por qué elegirnos?</h2>
-        <div class="compare-grid">
+        <div class="s-header">
+          <div class="s-tag reveal">Compara</div>
+          <h2 class="s-title reveal" style="animation-delay:.06s">¿Por qué <em>elegirnos</em>?</h2>
+        </div>
+        <div class="compare-cols">
           <div class="compare-col compare-col--us reveal" style="animation-delay:.05s">
-            <div class="compare-col__header">ONWhite</div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-col__head">ONWhite</div>
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               Precio competitivo. Ahorro aprox. con otras clínicas: 300€
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               FGM marca premium líder mercado blanqueamientos
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               Dentistas especializados exclusivamente en blanqueamientos dentales
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               Tratamientos 100% personalizados
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               Producto exclusivo para la sensibilidad
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               Una única visita en clínica 1 hora
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--yes">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--yes">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               Agendar por web rápida y sencilla, cita de un día para otro
             </div>
           </div>
           <div class="compare-col compare-col--them reveal" style="animation-delay:.12s">
-            <div class="compare-col__header">Otras clínicas</div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-col__head">Otras clínicas</div>
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Precios entre 350€ y 700€
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Marcas genéricas sin especialización
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Dentistas generalistas
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Tratamientos estándar
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Sin protocolo de sensibilidad
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Múltiples visitas necesarias
             </div>
-            <div class="compare-col__item">
-              <div class="compare-icon compare-icon--no">
+            <div class="compare-row">
+              <div class="compare-dot compare-dot--no">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </div>
               Citas con semanas de espera
@@ -378,87 +385,87 @@
     <section class="section" id="resultados">
       <div class="container">
         <div class="results__header">
-          <h2 class="results__title reveal">Resultados visibles</h2>
-          <p class="results__subtitle reveal" style="animation-delay:.05s">Miles de casos de éxito.</p>
-          <p class="results__desc reveal" style="animation-delay:.1s">Clínica mejor valorada para blanqueamientos dentales. Desliza para ver cómo nuestros pacientes pasaron de ocultar su sonrisa a "encenderla" al máximo. Resultados inmediatos, duraderos y 100% reales.</p>
+          <div class="s-tag reveal">Resultados</div>
+          <h2 class="s-title reveal" style="animation-delay:.05s">Resultados <em>visibles</em></h2>
+          <p class="s-desc reveal" style="animation-delay:.1s">Clínica mejor valorada para blanqueamientos dentales. Desliza para ver cómo nuestros pacientes pasaron de ocultar su sonrisa a "encenderla" al máximo. Resultados inmediatos, duraderos y 100% reales.</p>
           <p class="results__tagline reveal" style="animation-delay:.15s">Tu sonrisa: ON.</p>
         </div>
-        <div class="results-grid">
+        <div class="ba-grid">
           <div class="ba-card reveal" style="animation-delay:.05s">
-            <div class="ba-card__images">
+            <div class="ba-card__imgs">
               <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__label">Antes</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Antes</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
-              <div class="ba-card__divider"></div>
+              <div class="ba-card__div"></div>
               <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__label">Ahora</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Ahora</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
             </div>
           </div>
           <div class="ba-card reveal" style="animation-delay:.1s">
-            <div class="ba-card__images">
+            <div class="ba-card__imgs">
               <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__label">Antes</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Antes</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
-              <div class="ba-card__divider"></div>
+              <div class="ba-card__div"></div>
               <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__label">Ahora</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Ahora</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
             </div>
           </div>
           <div class="ba-card reveal" style="animation-delay:.15s">
-            <div class="ba-card__images">
+            <div class="ba-card__imgs">
               <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__label">Antes</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Antes</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
-              <div class="ba-card__divider"></div>
+              <div class="ba-card__div"></div>
               <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__label">Ahora</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Ahora</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
             </div>
           </div>
           <div class="ba-card reveal" style="animation-delay:.2s">
-            <div class="ba-card__images">
+            <div class="ba-card__imgs">
               <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__label">Antes</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Antes</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
-              <div class="ba-card__divider"></div>
+              <div class="ba-card__div"></div>
               <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__label">Ahora</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Ahora</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
             </div>
           </div>
           <div class="ba-card reveal" style="animation-delay:.25s">
-            <div class="ba-card__images">
+            <div class="ba-card__imgs">
               <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__label">Antes</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Antes</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
-              <div class="ba-card__divider"></div>
+              <div class="ba-card__div"></div>
               <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__label">Ahora</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Ahora</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
             </div>
           </div>
           <div class="ba-card reveal" style="animation-delay:.3s">
-            <div class="ba-card__images">
+            <div class="ba-card__imgs">
               <div class="ba-card__side ba-card__side--before">
-                <span class="ba-card__label">Antes</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Antes</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
-              <div class="ba-card__divider"></div>
+              <div class="ba-card__div"></div>
               <div class="ba-card__side ba-card__side--after">
-                <span class="ba-card__label">Ahora</span>
-                <div class="ba-card__placeholder"></div>
+                <span class="ba-card__tag">Ahora</span>
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80&auto=format&fit=crop" alt="Sonrisa" loading="lazy">
               </div>
             </div>
           </div>
@@ -483,31 +490,37 @@
         </div>
         <div class="reviews-grid">
           <div class="review-card reveal" style="animation-delay:.05s">
+            <div class="review-card__quote">"</div>
             <div class="review-card__stars">★★★★★</div>
             <p class="review-card__text">"El trato es inmejorable. el tratamiento super bien y con muy buenos resultados! Lo recomiendo"</p>
             <div class="review-card__author">María Guzmán</div>
           </div>
           <div class="review-card reveal" style="animation-delay:.1s">
+            <div class="review-card__quote">"</div>
             <div class="review-card__stars">★★★★★</div>
             <p class="review-card__text">"Me estoy realizando el blanqueamiento con ellos y estoy super contento, el cambio esta siendo brutal, además, la atención de todos ha sido 10/10, en especial la de Jusley. 100% recomendado, el sitio es muy top y está en una muy buena ubicación!!!"</p>
             <div class="review-card__author">Jorge Luis Pérez Paredes</div>
           </div>
           <div class="review-card reveal" style="animation-delay:.15s">
+            <div class="review-card__quote">"</div>
             <div class="review-card__stars">★★★★★</div>
             <p class="review-card__text">"La mejor clínica de blanqueamiento en Madrid, estoy super contenta con los resultados y con el trato del equipo! Super recomendable, cero sensibilidad y además puedes seguir tomando café sin problemas. Los mejores!"</p>
             <div class="review-card__author">Mila de la Torre</div>
           </div>
           <div class="review-card reveal" style="animation-delay:.2s">
+            <div class="review-card__quote">"</div>
             <div class="review-card__stars">★★★★★</div>
             <p class="review-card__text">"Me ha atendido la doctora Jusley, me ha explicado todos los pasos del tratamiento antes de empezar el mismo, lo recomiendo 100x100, estoy super contenta con el resultado."</p>
             <div class="review-card__author">Tamara Luque</div>
           </div>
           <div class="review-card reveal" style="animation-delay:.25s">
+            <div class="review-card__quote">"</div>
             <div class="review-card__stars">★★★★★</div>
             <p class="review-card__text">"El trato fue excepcional y la limpieza hecha por María Emilia fue rápida y efectiva! muchas gracias por todo. Recomiendo este sitio si quieren hacerse un blanqueamiento o limpieza!"</p>
             <div class="review-card__author">María Laura García Montalvo</div>
           </div>
           <div class="review-card reveal" style="animation-delay:.3s">
+            <div class="review-card__quote">"</div>
             <div class="review-card__stars">★★★★★</div>
             <p class="review-card__text">"El servicio, la gente, el producto en sí, increíble. Yo ya venía con un color bastante blanco así que no sabía qué tanto más podría blanquear, pero me bajaron al menos 3 tonos. Increíble!!"</p>
             <div class="review-card__author">Santiago Méndez Merino</div>
@@ -517,16 +530,18 @@
     </section>
 
     <!-- ==================== BOOKING CTA ==================== -->
-    <section class="section booking-cta" id="reservar">
+    <section class="section cta-section" id="reservar">
       <div class="container">
-        <h2 class="booking-cta__title reveal">Elige tu fecha y hora<br>de forma rápida y sencilla</h2>
-        <p class="booking-cta__desc reveal" style="animation-delay:.08s">Todo en una sola visita: Valoración + Blanqueamiento recomendado, que será realizado en el momento. Además podrás hacerte una limpieza dental previa.</p>
-        <div class="booking-cta__actions reveal" style="animation-delay:.14s">
+        <div class="cta-block">
+        <h2 class="cta-block__title reveal">Elige tu fecha y hora<br>de forma rápida y sencilla</h2>
+        <p class="cta-block__desc reveal" style="animation-delay:.08s">Todo en una sola visita: Valoración + Blanqueamiento recomendado, que será realizado en el momento. Además podrás hacerte una limpieza dental previa.</p>
+        <div class="cta-block__btns reveal" style="animation-delay:.14s">
           <a href="#" class="btn btn--yellow btn--lg">Coge tu cita hoy mismo</a>
           <a href="https://wa.me/34603913091" class="btn btn--outline btn--lg" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="#25D366" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             WhatsApp
           </a>
+        </div>
         </div>
       </div>
     </section>
@@ -534,7 +549,10 @@
     <!-- ==================== FAQ ==================== -->
     <section class="section faq" id="faq">
       <div class="container">
-        <h2 class="faq__title reveal">Preguntas frecuentes</h2>
+        <div class="s-header">
+          <div class="s-tag reveal">FAQ</div>
+          <h2 class="s-title reveal" style="animation-delay:.06s">Preguntas <em>frecuentes</em></h2>
+        </div>
         <div class="faq-list">
           <div class="faq-item reveal" style="animation-delay:.05s">
             <button class="faq-item__q" aria-expanded="false">
