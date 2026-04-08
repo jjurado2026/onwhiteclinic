@@ -1597,7 +1597,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
    PHONE FLOAT
    ============================================ */
 .phone-float {
-  position: fixed; bottom: 92px; right: 24px; z-index: 90;
+  position: fixed; bottom: 24px; left: 24px; z-index: 90;
   width: 52px; height: 52px; background: var(--blue); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow-blue);
@@ -1680,7 +1680,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 
   .sticky-bar { display: flex; }
   .wa-float { bottom: 80px; }
-  .phone-float { bottom: 144px; }
+  .phone-float { bottom: 80px; left: 20px; }
 
   .section { padding: clamp(56px, 8vw, 80px) 0; }
 
