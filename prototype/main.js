@@ -259,4 +259,28 @@
       })
     })
   })
+
+  /* ----------------------------------------------------------
+     10. SLIDER ARROWS — click to scroll horizontally
+     Each arrow has data-slider pointing to the slider ID.
+     Scrolls by the width of one visible card + gap.
+     ---------------------------------------------------------- */
+  document.querySelectorAll('.slider-arrow').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var sliderId = btn.getAttribute('data-slider')
+      var slider = document.getElementById(sliderId)
+      if (!slider) return
+
+      var card = slider.querySelector('.t-card, .ba-card')
+      if (!card) return
+
+      var scrollAmount = card.offsetWidth + 24
+      var direction = btn.classList.contains('slider-arrow--left') ? -1 : 1
+
+      slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      })
+    })
+  })
 })()

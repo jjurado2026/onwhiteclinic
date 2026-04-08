@@ -157,8 +157,15 @@
           </div>
           <h2 class="s-title reveal" style="animation-delay:.06s">Elige tu <em>tratamiento</em></h2>
         </div>
-        <div class="t-slider">
-          <div class="t-slider__track">
+        <div class="slider-wrap">
+          <button class="slider-arrow slider-arrow--left" data-slider="t-slider" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slider-arrow slider-arrow--right" data-slider="t-slider" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="t-slider" id="t-slider">
+            <div class="t-slider__track">
 
           <!-- Card 1: En casa -->
           <div class="t-card">
@@ -239,6 +246,7 @@
             <a href="#reservar" class="btn btn--outline btn--full btn--sm">Coge tu cita</a>
           </div>
 
+            </div>
           </div>
         </div>
       </div>
@@ -442,8 +450,15 @@
           <p class="ba-header__desc reveal" style="animation-delay:.1s">Miles de casos de éxito. Desliza para ver cómo nuestros pacientes pasaron de ocultar su sonrisa a "encenderla" al máximo. Resultados inmediatos, duraderos y 100% reales.</p>
           <p class="ba-header__tagline reveal" style="animation-delay:.15s">Tu sonrisa: ON.</p>
         </div>
-        <div class="ba-slider">
-          <div class="ba-slider__track">
+        <div class="slider-wrap">
+          <button class="slider-arrow slider-arrow--left slider-arrow--light" data-slider="ba-slider" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slider-arrow slider-arrow--right slider-arrow--light" data-slider="ba-slider" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="ba-slider" id="ba-slider">
+            <div class="ba-slider__track">
             <div class="ba-card">
               <div class="ba-card__top"><span class="ba-card__tag">Antes</span><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes" loading="lazy"></div>
               <div class="ba-card__bottom"><span class="ba-card__tag ba-card__tag--after">Ahora</span><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=75&auto=format&fit=crop" alt="Después" loading="lazy"></div>
@@ -475,6 +490,7 @@
             <div class="ba-card">
               <div class="ba-card__top"><span class="ba-card__tag">Antes</span><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=75&auto=format&fit=crop" alt="Antes" loading="lazy"></div>
               <div class="ba-card__bottom"><span class="ba-card__tag ba-card__tag--after">Ahora</span><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=75&auto=format&fit=crop" alt="Después" loading="lazy"></div>
+            </div>
             </div>
           </div>
         </div>
