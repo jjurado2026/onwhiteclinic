@@ -71,6 +71,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 /* --- Layout --- */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
 .section { padding: clamp(80px, 10vw, 140px) 0; position: relative; overflow: hidden; }
+.section--scroll { overflow: visible; }
 
 /* --- Buttons --- */
 .btn {
@@ -760,6 +761,16 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 }
 .compare-table__row--header > div {
   padding: 20px 24px;
+  display: flex; align-items: center; justify-content: center;
+}
+.compare-table__row--header .compare-table__us {
+  background: var(--blue);
+}
+.compare-them-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
 }
 .compare-table__feature {
   padding: 16px 24px;
