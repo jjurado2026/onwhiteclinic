@@ -1490,7 +1490,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 /* ============================================
    PROCESS SECTION (NEW)
    ============================================ */
-.process-section { background: var(--blue); }
+.process-section { background: var(--blue); display: none; }
 .process-section .s-tag { color: var(--yellow); }
 .process-section .s-tag::before,
 .process-section .s-tag::after { background: rgba(255,255,255,0.15); }
@@ -1538,7 +1538,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 /* ============================================
    FINANCE SECTION (NEW)
    ============================================ */
-.finance-section { background: var(--off-white); }
+.finance-section { background: var(--off-white); padding-bottom: 0; }
 .finance-card {
   display: grid; grid-template-columns: 1.5fr 1fr;
   gap: 48px; align-items: center;
