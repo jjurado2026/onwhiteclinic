@@ -275,7 +275,9 @@
       if (!card) return
 
       var scrollAmount = card.offsetWidth + 24
-      var direction = btn.classList.contains('slider-arrow--left') ? -1 : 1
+      // Determine direction from the SVG path content (left arrow has "15 18l-6", right has "9 18l6")
+      var svgPath = btn.querySelector('path')
+      var direction = svgPath && svgPath.getAttribute('d').indexOf('15') === 1 ? -1 : 1
 
       slider.scrollBy({
         left: direction * scrollAmount,
