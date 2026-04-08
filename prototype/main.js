@@ -261,9 +261,9 @@
   })
 
   /* ----------------------------------------------------------
-     10. SLIDER ARROWS — click to scroll horizontally
+     10. SLIDER ARROWS — click to scroll, infinite loop
      Each arrow has data-slider pointing to the slider ID.
-     Scrolls by the width of one visible card + gap.
+     Scrolls by one card width. Loops back to start/end.
      ---------------------------------------------------------- */
   document.querySelectorAll('.slider-arrow').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -271,18 +271,39 @@
       var slider = document.getElementById(sliderId)
       if (!slider) return
 
-      var card = slider.querySelector('.t-card, .ba-card')
+      var card = slider.querySelector('.t-card, .ba-card, .review-card')
       if (!card) return
 
-      var scrollAmount = card.offsetWidth + 24
-      // Determine direction from the SVG path content (left arrow has "15 18l-6", right has "9 18l6")
+      var scrollAmount = card.offsetWidth + 20
       var svgPath = btn.querySelector('path')
-      var direction = svgPath && svgPath.getAttribute('d').indexOf('15') === 1 ? -1 : 1
+      var isLeft = svgPath && svgPath.getAttribute('d').indexOf('15') === 1
 
-      slider.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      })
+      if (isLeft) {
+        if (slider.scrollLeft <= 10) {
+          // At start — jump to end
+          slider.scrollTo({ left: slider.scrollWidth, behavior: 'smooth' })
+        } else {
+          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' })
+        }
+      } else {
+        var maxScroll = slider.scrollWidth - slider.clientWidth
+        if (slider.scrollLeft >= maxScroll - 10) {
+          // At end — jump to start
+          slider.scrollTo({ left: 0, behavior: 'smooth' })
+        } else {
+          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+        }
+      }
     })
   })
+
+  /* ----------------------------------------------------------
+     11. SCROLL TO TOP — footer button
+     ---------------------------------------------------------- */
+  var scrollTopBtn = document.getElementById('scrollTop')
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+  }
 })()
