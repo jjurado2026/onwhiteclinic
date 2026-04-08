@@ -218,11 +218,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 .hero {
   position: relative;
   background: var(--blue);
-  min-height: 100dvh;
+  min-height: calc(100dvh - 44px); /* minus topbar */
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 110px 0 50px;
+  padding: 90px 0 0;
+  margin-bottom: 0;
 }
 
 .hero__bg { position: absolute; inset: 0; pointer-events: none; }
@@ -443,12 +444,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 /* Treatment Slider */
 .t-slider {
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   margin: 0 calc(-1 * clamp(20px, 4vw, 48px));
-  padding: 0 clamp(20px, 4vw, 48px) 20px;
+  padding: 20px clamp(20px, 4vw, 48px) 20px;
 }
 .t-slider::-webkit-scrollbar { display: none; }
 .t-slider__track {
@@ -461,6 +462,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   scroll-snap-align: start;
   opacity: 1;
   transform: none;
+}
+.t-slider__track .t-card--best {
+  overflow: visible;
 }
 
 .t-card {
@@ -864,11 +868,25 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   letter-spacing: 0.02em;
 }
 
-.ba-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.ba-slider {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin: 0 calc(-1 * clamp(20px, 4vw, 48px));
+  padding: 10px clamp(20px, 4vw, 48px) 20px;
   position: relative; z-index: 2;
+}
+.ba-slider::-webkit-scrollbar { display: none; }
+.ba-slider__track {
+  display: flex;
+  gap: 24px;
+}
+.ba-slider__track .ba-card {
+  flex: 0 0 calc(33.33% - 16px);
+  min-width: 260px;
+  scroll-snap-align: start;
 }
 
 /* Before/After — Vertical Layout */
@@ -1174,6 +1192,41 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 .insta-grid__item:hover .insta-grid__overlay { opacity: 1; }
 .insta-grid__overlay svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
 
+/* Instagram Embed */
+.insta-embed {
+  margin-top: 32px;
+  min-height: 400px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.insta-feed {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.insta-feed__item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.insta-feed__item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.insta-feed__item:hover img { transform: scale(1.08); }
+.insta-feed__item::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(51,62,242,0.4) 100%);
+  opacity: 0; transition: opacity 0.4s;
+  pointer-events: none;
+}
+.insta-feed__item:hover::after { opacity: 1; }
+
+@media (max-width: 768px) {
+  .insta-feed { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ============================================
    FOOTER
@@ -1373,7 +1426,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   .usp-layout { grid-template-columns: 1fr; }
   .usp-photo__frame img { min-height: 300px; }
 
-  .ba-grid { grid-template-columns: 1fr 1fr; }
+  .ba-slider__track .ba-card { flex: 0 0 calc(50% - 12px); }
 
   .reviews-grid { grid-template-columns: 1fr; }
 
@@ -1394,7 +1447,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
    ============================================ */
 @media (max-width: 480px) {
   .t-slider__track .t-card { flex: 0 0 85%; min-width: 260px; }
-  .ba-grid { grid-template-columns: 1fr; }
+  .ba-slider__track .ba-card { flex: 0 0 85%; }
   .insta-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-row { flex-direction: column; }
   .stat-pill { min-width: 100%; }
