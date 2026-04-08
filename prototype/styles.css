@@ -219,11 +219,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 .hero {
   position: relative;
   background: var(--blue);
-  min-height: calc(100dvh - 44px); /* minus topbar */
+  /* hero + marquee must fit in viewport */
+  min-height: calc(100dvh - 44px - 72px - 52px); /* minus topbar, header, marquee */
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 72px 0 0;
+  padding: 24px 0 20px;
   margin-bottom: 0;
 }
 
@@ -274,7 +275,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   max-width: var(--container); margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 48px);
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 5vw, 80px); align-items: center;
+  gap: clamp(24px, 3vw, 48px); align-items: center;
   position: relative; z-index: 2;
 }
 
@@ -297,8 +298,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(44px, 5.5vw, 80px);
-  font-weight: 800; line-height: 1.02;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 800; line-height: 1.05;
   color: var(--white); margin-bottom: 24px;
   letter-spacing: -0.03em;
 }
@@ -307,13 +308,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   text-shadow: 0 0 60px rgba(255,237,2,0.3);
 }
 .hero__desc {
-  font-size: clamp(16px, 1.2vw, 19px);
+  font-size: clamp(15px, 1.1vw, 17px);
   color: rgba(255,255,255,0.6);
-  max-width: 480px; line-height: 1.7; margin-bottom: 12px;
+  max-width: 460px; line-height: 1.6; margin-bottom: 8px;
 }
 .hero__sub {
-  font-size: 17px; font-weight: 700; color: var(--yellow);
-  margin-bottom: 36px;
+  font-size: 15px; font-weight: 700; color: var(--yellow);
+  margin-bottom: 24px;
   display: flex; align-items: center; gap: 10px;
   text-transform: uppercase; letter-spacing: 0.04em;
 }
@@ -327,9 +328,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 /* Hero Image */
 .hero__visual { position: relative; }
 .hero__img-wrap {
-  position: relative; border-radius: 28px; overflow: hidden;
-  aspect-ratio: 3/4;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+  position: relative; border-radius: 24px; overflow: hidden;
+  aspect-ratio: 4/5;
+  max-height: calc(100dvh - 44px - 72px - 52px - 48px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
 }
 .hero__img-wrap img {
   width: 100%; height: 100%; object-fit: cover;
@@ -499,8 +501,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 }
 .slider-arrow:active { transform: translateY(-50%) scale(0.95); }
 .slider-arrow svg { width: 20px; height: 20px; }
-.slider-arrow--left { left: 8px; }
-.slider-arrow--right { right: 8px; }
+.slider-arrow--left { left: -24px; }
+.slider-arrow--right { right: -24px; }
 
 .slider-arrow--light {
   background: rgba(255,255,255,0.15);
